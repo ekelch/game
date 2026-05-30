@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://c4e531rvfs0do"]
+
+[ext_resource type="PackedScene" uid="uid://cpv4c4weqa6b7" path="res://assets/blender/portalRoom/portal.glb" id="1_bj7ye"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_crxyx"]
+size = Vector3(7.763916, 0.44213867, 7.75)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ynjka"]
+size = Vector3(7.763916, 6.5223694, 0.134552)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_behkj"]
+size = Vector3(7.763916, 6.5223694, 0.134552)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_sb662"]
+size = Vector3(7.763916, 6.5223694, 0.134552)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bj7ye"]
+albedo_color = Color(0.97852427, 0.45804417, 0.59037924, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_crxyx"]
+material = SubResource("StandardMaterial3D_bj7ye")
+
+[node name="PortalRoom" type="StaticBody3D" unique_id=1492898444]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1472821283]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.87858295, 0)
+shape = SubResource("BoxShape3D_crxyx")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="." unique_id=602434066]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.3430605, 3.8276825)
+shape = SubResource("BoxShape3D_ynjka")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="." unique_id=195847840]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -3.839, 4.3430605, -0.02131176)
+shape = SubResource("BoxShape3D_behkj")
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="." unique_id=1414547158]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 3.8269951, 4.3430605, -0.02131176)
+shape = SubResource("BoxShape3D_sb662")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=913163108]
+transform = Transform3D(1, 0, 0, 0, 0.294, 0, 0, 0, 1, 0, 1.2080004, -3.240999)
+mesh = SubResource("BoxMesh_crxyx")
+
+[node name="portal" parent="." unique_id=860696796 instance=ExtResource("1_bj7ye")]
+
+[editable path="portal"]

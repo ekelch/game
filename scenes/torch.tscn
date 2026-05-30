@@ -1,0 +1,73 @@
+[gd_scene format=3 uid="uid://dth3pvhhgw3ve"]
+
+[ext_resource type="Texture2D" uid="uid://cwafanx7psnfx" path="res://vfx/particles/alpha/flame_03_a.png" id="2_my26j"]
+[ext_resource type="PackedScene" uid="uid://ddvgdcsyml3ul" path="res://assets/props/Torch_Metal.gltf" id="2_o2tjn"]
+
+[sub_resource type="Curve" id="Curve_my26j"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_my26j"]
+curve = SubResource("Curve_my26j")
+
+[sub_resource type="Gradient" id="Gradient_r3k50"]
+colors = PackedColorArray(1, 0.356, 0.16000003, 1, 1, 0.13333333, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_o2tjn"]
+gradient = SubResource("Gradient_r3k50")
+
+[sub_resource type="Curve" id="Curve_o2tjn"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.7490909, 0.5399096), -0.52344775, -0.52344775, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_r3k50"]
+curve = SubResource("Curve_o2tjn")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ndh0a"]
+direction = Vector3(0, 1, 0)
+spread = 24.324
+initial_velocity_min = 0.79999995
+initial_velocity_max = 1.1999999
+angular_velocity_min = -443.07
+angular_velocity_max = 373.74
+gravity = Vector3(0, 0, 0)
+scale_curve = SubResource("CurveTexture_r3k50")
+color_ramp = SubResource("GradientTexture1D_o2tjn")
+alpha_curve = SubResource("CurveTexture_my26j")
+turbulence_noise_strength = 0.35
+turbulence_noise_scale = 4.714
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ndh0a"]
+transparency = 1
+blend_mode = 1
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("2_my26j")
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="QuadMesh" id="QuadMesh_gybtl"]
+material = SubResource("StandardMaterial3D_ndh0a")
+size = Vector2(0.2, 0.2)
+
+[node name="StaticBody3D" type="Node3D" unique_id=970266645]
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=743837624]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.64485645, 0.40442842)
+light_color = Color(0.9421614, 0.72583544, 0.29865324, 1)
+light_energy = 1.5
+light_bake_mode = 1
+omni_attenuation = 2.0
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="." unique_id=1487186224]
+transform = Transform3D(0.35, 0, 0, 0, 0.35, 0, 0, 0, 0.35, 0, 0.27206716, 0.27732804)
+amount = 48
+lifetime = 1.2
+explosiveness = 0.08
+randomness = 0.38
+process_material = SubResource("ParticleProcessMaterial_ndh0a")
+draw_pass_1 = SubResource("QuadMesh_gybtl")
+
+[node name="Torch_Metal2" parent="." unique_id=641905734 instance=ExtResource("2_o2tjn")]

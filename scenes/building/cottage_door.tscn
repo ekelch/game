@@ -1,0 +1,60 @@
+[gd_scene format=3 uid="uid://d4ewxnfdtueo8"]
+
+[ext_resource type="Script" uid="uid://lgquyknqajn0" path="res://scripts/door.gd" id="1_1apau"]
+[ext_resource type="PackedScene" uid="uid://bncvgo61sw4my" path="res://assets/blender/door.glb" id="1_ulctb"]
+
+[sub_resource type="Animation" id="Animation_ulctb"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_1apau"]
+resource_name = "open"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 1.904416, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rrgx5"]
+_data = {
+&"RESET": SubResource("Animation_ulctb"),
+&"open": SubResource("Animation_1apau")
+}
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1apau"]
+size = Vector3(0.05458069, 1.8868408, 0.8404541)
+
+[node name="CottageDoor" type="StaticBody3D" unique_id=132845759]
+transform = Transform3D(0.9999997, 0, 0, 0, 1, 0, 0, 0, 0.9999997, 0, 0, 0)
+script = ExtResource("1_1apau")
+
+[node name="door" parent="." unique_id=878214446 instance=ExtResource("1_ulctb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0473174, -0.4866955)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1915191436]
+libraries/ = SubResource("AnimationLibrary_rrgx5")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2137993067]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.01192577, 0.9434204, -0.434263)
+shape = SubResource("BoxShape3D_1apau")
+
+[connection signal="ready" from="." to="." method="_on_ready"]

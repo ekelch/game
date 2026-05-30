@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://bk45o5x0a87xa"]
+
+[ext_resource type="PackedScene" uid="uid://c4e531rvfs0do" path="res://scenes/building/portal_room.tscn" id="1_xvmrq"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_xvmrq"]
+
+[node name="root" type="Node3D" unique_id=2116843528]
+
+[node name="PortalRoom" parent="." unique_id=1492898444 instance=ExtResource("1_xvmrq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1155603498]
+transform = Transform3D(23.702717, 0, 0, 0, 23.702717, 0, 0, 0, 23.702717, 0, 0, 0)
+mesh = SubResource("PlaneMesh_xvmrq")

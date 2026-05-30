@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://rdh5liea2huu"]
+
+[ext_resource type="PackedScene" uid="uid://cg77j67sjp1nw" path="res://assets/medieval/Wall_Plaster_Door_Flat.gltf" id="2_i17vk"]
+[ext_resource type="PackedScene" uid="uid://ctlnbn6ihknyt" path="res://scenes/building/door.tscn" id="3_kojni"]
+[ext_resource type="PackedScene" uid="uid://5shawbwkaibg" path="res://assets/medieval/DoorFrame_Round_WoodDark.gltf" id="4_tevac"]
+
+[node name="Door_Flat_Complete" type="Node3D" unique_id=404078416]
+
+[node name="Wall_Plaster_Door_Flat2" parent="." unique_id=2099831879 instance=ExtResource("2_i17vk")]
+
+[node name="Door" parent="." unique_id=532617378 instance=ExtResource("3_kojni")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.50484264, 0, -2.2351742e-08)
+
+[node name="DoorFrame_Round_WoodDark2" parent="." unique_id=2110008321 instance=ExtResource("4_tevac")]

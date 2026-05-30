@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://cyugo2qchpftv"]
+
+[ext_resource type="PackedScene" uid="uid://bbed5cubtwv4" path="res://assets/medieval/Floor_UnevenBrick.gltf" id="1_we5o2"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_we5o2"]
+size = Vector3(2, 0.001, 2)
+
+[node name="Floor_UnevenBrick" type="StaticBody3D" unique_id=1780034927]
+
+[node name="Floor_UnevenBrick2" parent="." unique_id=1233866384 instance=ExtResource("1_we5o2")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1785685910]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.00049999356, 0)
+shape = SubResource("BoxShape3D_we5o2")

@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://bgsp3gngm1do4"]
+
+[ext_resource type="PackedScene" uid="uid://bk71c33ffp7g1" path="res://assets/outdoors/CommonTree_2.gltf" id="1_7colr"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_du1oe"]
+height = 1.1765137
+radius = 0.43310547
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_4g31a"]
+height = 1.1765137
+radius = 0.30615234
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_2ydvq"]
+height = 2.3300476
+radius = 0.2680664
+
+[node name="CommonTree" type="StaticBody3D" unique_id=613233578]
+
+[node name="CommonTree_22" parent="." unique_id=1480062298 instance=ExtResource("1_7colr")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1079654088]
+transform = Transform3D(0.99822396, 0.037051573, 0.046649974, -0.03255936, 0.9950754, -0.09362416, -0.049889147, 0.09193896, 0.9945142, -0.0174337, 0.56276196, 0.054544657)
+shape = SubResource("CylinderShape3D_du1oe")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="." unique_id=1107816796]
+transform = Transform3D(0.99867177, -0.0005553402, 0.051521294, 0.007129035, 0.9918138, -0.1274964, -0.051028714, 0.12769437, 0.9905002, -0.0034209192, 1.7008071, 0.20637333)
+shape = SubResource("CylinderShape3D_4g31a")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="." unique_id=1468659568]
+transform = Transform3D(0.99867165, -0.00055534043, 0.05152128, -0.008685518, 0.98381793, 0.17896153, -0.050786946, -0.17917134, 0.9825061, -0.0037412213, 3.4038281, 0.23474537)
+shape = SubResource("CylinderShape3D_2ydvq")

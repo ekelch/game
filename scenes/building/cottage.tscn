@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://7j1lhc4dei0w"]
+
+[ext_resource type="PackedScene" uid="uid://b8arvvv0v1if7" path="res://assets/blender/cottage.glb" id="1_11g5c"]
+[ext_resource type="PackedScene" uid="uid://d4ewxnfdtueo8" path="res://scenes/building/cottage_door.tscn" id="2_pu3b7"]
+
+[node name="Node3D" type="Node3D" unique_id=750268669]
+
+[node name="cottage" parent="." unique_id=1945467243 instance=ExtResource("1_11g5c")]
+
+[node name="CottageDoor" parent="." unique_id=1866487519 instance=ExtResource("2_pu3b7")]
+transform = Transform3D(0.9999997, 0, 0, 0, 1, 0, 0, 0, 0.9999997, 0.0579506, 5.9604645e-08, -1.0706182)

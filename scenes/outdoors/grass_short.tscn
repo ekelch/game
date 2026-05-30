@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://bpmrvteoftor5"]
+
+[ext_resource type="PackedScene" uid="uid://0ln1rnl6jgg5" path="res://assets/outdoors/Grass_Common_Short.gltf" id="1_vxucx"]
+
+[node name="Grass_short" type="Node3D" unique_id=658204213]
+
+[node name="Grass_Common_Short2" parent="." unique_id=316434043 instance=ExtResource("1_vxucx")]
+
+[editable path="Grass_Common_Short2"]

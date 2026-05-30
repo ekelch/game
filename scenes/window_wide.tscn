@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://bhp1pljilr8lj"]
+
+[ext_resource type="PackedScene" uid="uid://1816ypbcuho" path="res://assets/medieval/Window_Wide_Flat1.gltf" id="2_ma0sf"]
+[ext_resource type="PackedScene" uid="uid://blg43lv3mn2t7" path="res://assets/medieval/WindowShutters_Wide_Flat_Open.gltf" id="3_0hl6d"]
+[ext_resource type="PackedScene" uid="uid://xt4o0xdyeb43" path="res://assets/medieval/Wall_Plaster_Window_Wide_Flat.gltf" id="3_uay5j"]
+
+[node name="Window_Wide" type="Node3D" unique_id=1553636713]
+
+[node name="Window_Wide_Flat12" parent="." unique_id=1901522869 instance=ExtResource("2_ma0sf")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="WindowShutters_Wide_Flat_Open2" parent="." unique_id=1717893338 instance=ExtResource("3_0hl6d")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Wall_Plaster_Window_Wide_Flat2" parent="." unique_id=850954966 instance=ExtResource("3_uay5j")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)

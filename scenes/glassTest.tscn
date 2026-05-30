@@ -1,0 +1,61 @@
+[gd_scene format=3 uid="uid://dijsdrs2ys0te"]
+
+[ext_resource type="Texture2D" uid="uid://c7nv3nu5q1023" path="res://assets/sky/citrus_orchard_road_puresky_2k.hdr" id="1_mh4ds"]
+[ext_resource type="Material" uid="uid://bmtwthrteqc5j" path="res://assets/materials/glassShader.tres" id="2_ymcsm"]
+[ext_resource type="Material" uid="uid://33gf3x52xpmw" path="res://assets/materials/TilesZelligeSquaresWeathered001_1K.res" id="3_yjvtn"]
+[ext_resource type="PackedScene" uid="uid://c2h2hkt3ao6cv" path="res://scenes/outdoors/common_tree_1.tscn" id="4_pqtk1"]
+[ext_resource type="PackedScene" uid="uid://c4e531rvfs0do" path="res://scenes/building/portal_room.tscn" id="4_ymcsm"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_77ioc"]
+panorama = ExtResource("1_mh4ds")
+energy_multiplier = 0.2
+
+[sub_resource type="Sky" id="Sky_bsiyi"]
+sky_material = SubResource("PanoramaSkyMaterial_77ioc")
+
+[sub_resource type="Environment" id="Environment_dpw3w"]
+background_mode = 2
+sky = SubResource("Sky_bsiyi")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_h8g5t"]
+material = ExtResource("2_ymcsm")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_18rmt"]
+material = ExtResource("3_yjvtn")
+size = Vector2(60, 50)
+
+[node name="Node3D" type="Node3D" unique_id=1437474601]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=2041078791]
+environment = SubResource("Environment_dpw3w")
+
+[node name="bigglass" type="MeshInstance3D" parent="." unique_id=1868003372]
+transform = Transform3D(27.202187, 0, 0, 0, 16.593334, 0, 0, 0, 0.56034, 0, 8.174006, 0)
+visible = false
+mesh = SubResource("BoxMesh_h8g5t")
+
+[node name="ground" type="MeshInstance3D" parent="." unique_id=532430809]
+mesh = SubResource("PlaneMesh_18rmt")
+
+[node name="PortalRoom" parent="." unique_id=1492898444 instance=ExtResource("4_ymcsm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.8130007, 0, -7.1610003)
+
+[node name="trees" type="Node3D" parent="." unique_id=287157322]
+
+[node name="CommonTree1" type="StaticBody3D" parent="trees" unique_id=613233578 instance=ExtResource("4_pqtk1")]
+transform = Transform3D(0.8636442, 0, 0.5041019, 0, 1, 0, -0.5041019, 0, 0.8636442, 4.106593, 0, 8.530227)
+metadata/asset_placer_res_id = "uid://c2h2hkt3ao6cv"
+
+[node name="CommonTree1 (1)" type="StaticBody3D" parent="trees" unique_id=1987469045 instance=ExtResource("4_pqtk1")]
+transform = Transform3D(-0.9977689, 0, 0.06676301, 0, 1, 0, -0.06676301, 0, -0.9977689, -3.7082863, 0, 8.152447)
+metadata/asset_placer_res_id = "uid://c2h2hkt3ao6cv"
+
+[node name="CommonTree1 (2)" type="StaticBody3D" parent="trees" unique_id=1365763967 instance=ExtResource("4_pqtk1")]
+transform = Transform3D(-0.1910213, 0, -0.9815859, 0, 1, 0, 0.9815859, 0, -0.1910213, 0.9852371, 0, 6.0933)
+metadata/asset_placer_res_id = "uid://c2h2hkt3ao6cv"
+
+[node name="CommonTree1 (3)" type="StaticBody3D" parent="trees" unique_id=1122288498 instance=ExtResource("4_pqtk1")]
+transform = Transform3D(0.25238678, 0, 0.96762645, 0, 1, 0, -0.96762645, 0, 0.25238678, 7.4406443, 0, 6.3335056)
+metadata/asset_placer_res_id = "uid://c2h2hkt3ao6cv"
