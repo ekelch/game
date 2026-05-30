@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://ba31sqb1nvms8"]
+
+[ext_resource type="Script" uid="uid://bc4bi8jjai0nq" path="res://scripts/load_screen.gd" id="1_5eiqs"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2500c"]
+bg_color = Color(0, 0, 0, 1)
+
+[node name="LoadingScreen" type="CanvasLayer" unique_id=671601016]
+layer = 10
+script = ExtResource("1_5eiqs")
+
+[node name="Panel" type="Panel" parent="." unique_id=1610321493]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_2500c")

@@ -1,14 +1,96 @@
 [gd_scene format=3 uid="uid://bk45o5x0a87xa"]
 
+[ext_resource type="Script" uid="uid://ba5aqhkk8swon" path="res://scripts/portalscene.gd" id="1_oorkw"]
 [ext_resource type="PackedScene" uid="uid://c4e531rvfs0do" path="res://scenes/building/portal_room.tscn" id="1_xvmrq"]
+[ext_resource type="Material" uid="uid://dj2id6yo75ckb" path="res://assets/materials/Poliigon_ConcreteFloorPoured_7656_1K.res" id="2_c0uxe"]
+[ext_resource type="PackedScene" uid="uid://bs72ogkvdd7d6" path="res://scenes/controller/player_controller.tscn" id="3_kfe2m"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_xvmrq"]
+material = ExtResource("2_c0uxe")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_kfe2m"]
+size = Vector3(2, 0.001, 2)
+
+[sub_resource type="BoxMesh" id="BoxMesh_kfe2m"]
+material = ExtResource("2_c0uxe")
+size = Vector3(3, 1, 1)
+
+[sub_resource type="Environment" id="Environment_oorkw"]
+background_mode = 1
+background_color = Color(0.1794, 0.25462663, 0.26, 1)
+background_energy_multiplier = 3.64
+tonemap_mode = 4
+tonemap_exposure = 1.42
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.01
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_oorkw"]
+size = Vector3(7.9453125, 6.673584, 1)
 
 [node name="root" type="Node3D" unique_id=2116843528]
+script = ExtResource("1_oorkw")
 
 [node name="PortalRoom" parent="." unique_id=1492898444 instance=ExtResource("1_xvmrq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.36800003, 1)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1155603498]
+[node name="roomBoundary" type="Node3D" parent="." unique_id=1272792242]
+
+[node name="floor" type="MeshInstance3D" parent="roomBoundary" unique_id=1155603498]
 transform = Transform3D(23.702717, 0, 0, 0, 23.702717, 0, 0, 0, 23.702717, 0, 0, 0)
 mesh = SubResource("PlaneMesh_xvmrq")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="roomBoundary/floor" unique_id=895758910]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="roomBoundary/floor/StaticBody3D" unique_id=333144410]
+visible = false
+shape = SubResource("BoxShape3D_kfe2m")
+
+[node name="ceiling" type="MeshInstance3D" parent="roomBoundary" unique_id=163657156]
+transform = Transform3D(-23.702719, -2.0721575e-06, 0, 2.0721575e-06, -23.702719, 0, 0, 0, 23.702717, 0, 20.041004, 0)
+mesh = SubResource("PlaneMesh_xvmrq")
+
+[node name="wall" type="MeshInstance3D" parent="roomBoundary" unique_id=1653058807]
+transform = Transform3D(16, 0, 0, 0, 22, 0, 0, 0, 0.784, -0.0019993186, 9.274614, -23.266727)
+mesh = SubResource("BoxMesh_kfe2m")
+
+[node name="wall2" type="MeshInstance3D" parent="roomBoundary" unique_id=1215690624]
+transform = Transform3D(16, 0, 0, 0, 22, 0, 0, 0, 0.784, -0.13599962, 9.274614, 23.404282)
+mesh = SubResource("BoxMesh_kfe2m")
+
+[node name="wall3" type="MeshInstance3D" parent="roomBoundary" unique_id=1442684903]
+transform = Transform3D(-6.993822e-07, 0, 0.78400004, 0, 22, 0, -16, 0, -3.426973e-08, -23.596, 9.274614, 0.34227368)
+mesh = SubResource("BoxMesh_kfe2m")
+
+[node name="wall4" type="MeshInstance3D" parent="roomBoundary" unique_id=2113987983]
+transform = Transform3D(-6.993822e-07, 0, 0.78400004, 0, 22, 0, -16, 0, -3.426973e-08, 23.968018, 9.274614, -0.1857262)
+mesh = SubResource("BoxMesh_kfe2m")
+
+[node name="ProtoController" parent="." unique_id=746433795 instance=ExtResource("3_kfe2m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2184906, 1.4096923, 0.4709568)
+
+[node name="lights" type="Node3D" parent="." unique_id=1608886943]
+
+[node name="OmniLight3D" type="OmniLight3D" parent="lights" unique_id=581656889]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.108, 5.8529997, 0.61200017)
+light_color = Color(0.5784966, 0.9999998, 0.95837003, 1)
+light_energy = 6.148
+omni_range = 7.688
+omni_attenuation = 2.0
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="lights" unique_id=2069881332]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.964993, 5.8529997, -15.701001)
+light_color = Color(0.96, 0.9016, 0.25919998, 1)
+light_energy = 6.056
+omni_range = 7.688
+omni_attenuation = 2.0
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1984952854]
+environment = SubResource("Environment_oorkw")
+
+[node name="Area3D" type="Area3D" parent="." unique_id=535154212]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1594870078]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.067080975, 3.6183107, -3.4769835)
+shape = SubResource("BoxShape3D_oorkw")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

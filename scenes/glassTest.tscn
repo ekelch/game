@@ -44,18 +44,18 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.8130007, 0, -7.1610003)
 
 [node name="trees" type="Node3D" parent="." unique_id=287157322]
 
-[node name="CommonTree1" type="StaticBody3D" parent="trees" unique_id=613233578 instance=ExtResource("4_pqtk1")]
+[node name="CommonTree1" parent="trees" unique_id=613233578 instance=ExtResource("4_pqtk1")]
 transform = Transform3D(0.8636442, 0, 0.5041019, 0, 1, 0, -0.5041019, 0, 0.8636442, 4.106593, 0, 8.530227)
 metadata/asset_placer_res_id = "uid://c2h2hkt3ao6cv"
 
-[node name="CommonTree1 (1)" type="StaticBody3D" parent="trees" unique_id=1987469045 instance=ExtResource("4_pqtk1")]
+[node name="CommonTree1 (1)" parent="trees" unique_id=1987469045 instance=ExtResource("4_pqtk1")]
 transform = Transform3D(-0.9977689, 0, 0.06676301, 0, 1, 0, -0.06676301, 0, -0.9977689, -3.7082863, 0, 8.152447)
 metadata/asset_placer_res_id = "uid://c2h2hkt3ao6cv"
 
-[node name="CommonTree1 (2)" type="StaticBody3D" parent="trees" unique_id=1365763967 instance=ExtResource("4_pqtk1")]
+[node name="CommonTree1 (2)" parent="trees" unique_id=1365763967 instance=ExtResource("4_pqtk1")]
 transform = Transform3D(-0.1910213, 0, -0.9815859, 0, 1, 0, 0.9815859, 0, -0.1910213, 0.9852371, 0, 6.0933)
 metadata/asset_placer_res_id = "uid://c2h2hkt3ao6cv"
 
-[node name="CommonTree1 (3)" type="StaticBody3D" parent="trees" unique_id=1122288498 instance=ExtResource("4_pqtk1")]
+[node name="CommonTree1 (3)" parent="trees" unique_id=1122288498 instance=ExtResource("4_pqtk1")]
 transform = Transform3D(0.25238678, 0, 0.96762645, 0, 1, 0, -0.96762645, 0, 0.25238678, 7.4406443, 0, 6.3335056)
 metadata/asset_placer_res_id = "uid://c2h2hkt3ao6cv"

@@ -7,7 +7,7 @@ signal colliderChanged;
 func _ready() -> void:
 	self.add_exception(proto_controller)
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	if get_collider_rid() != lastCollider:
 		lastCollider = get_collider_rid()
 		colliderChanged.emit()

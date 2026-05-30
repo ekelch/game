@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bs72ogkvdd7d6"]
 
-[ext_resource type="Script" uid="uid://1qvhp5pqh0mn" path="res://addons/proto_controller/proto_controller.gd" id="1_ucva2"]
-[ext_resource type="Script" uid="uid://capob1q47a4nb" path="res://addons/proto_controller/player_ray.gd" id="2_wr06p"]
+[ext_resource type="Script" uid="uid://1qvhp5pqh0mn" path="res://scenes/controller/player_controller.gd" id="1_ucva2"]
+[ext_resource type="Script" uid="uid://capob1q47a4nb" path="res://scenes/controller/player_ray.gd" id="2_wr06p"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_iof21"]
 albedo_color = Color(0.91806, 0.575202, 0.222449, 1)
@@ -31,26 +31,26 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Mesh:position")
+tracks/1/path = NodePath("Head:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(0, 0.58996093, 0)]
+"values": [Vector3(0, 1.7, 0)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Head:position")
+tracks/2/path = NodePath("Collider:shape:height")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(0, 1.7, 0)]
+"values": [1.8]
 }
 
 [sub_resource type="Animation" id="Animation_5hfox"]
@@ -71,26 +71,26 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Mesh:position")
+tracks/1/path = NodePath("Head:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0, 0.25),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector3(0, 0.8161756, 0), Vector3(0, 0.58996093, 0)]
+"values": [Vector3(0, 1.7, 0), Vector3(0, 1.1654316, 0)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Head:position")
+tracks/2/path = NodePath("Collider:shape:height")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0, 0.25),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector3(0, 1.7, 0), Vector3(0, 1.1654316, 0)]
+"values": [1.8, 1.2]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_6dqce"]
@@ -103,7 +103,7 @@ _data = {
 script = ExtResource("1_ucva2")
 
 [node name="Mesh" type="MeshInstance3D" parent="." unique_id=1115546039]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.58996093, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.89970964, 0)
 material_override = SubResource("StandardMaterial3D_iof21")
 mesh = SubResource("CapsuleMesh_ucva2")
 
@@ -115,6 +115,7 @@ shape = SubResource("CapsuleShape3D_iof21")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7, 0)
 
 [node name="Camera3D" type="Camera3D" parent="Head" unique_id=1956514110]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.21965098, 0)
 
 [node name="RayCast3D" type="RayCast3D" parent="Head" unique_id=491220870]
 target_position = Vector3(0, 0, -2)

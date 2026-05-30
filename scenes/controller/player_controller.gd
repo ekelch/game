@@ -49,7 +49,6 @@ extends CharacterBody3D
 ## Name of Input Action to toggle freefly mode.
 @export var input_freefly : String = "freefly"
 
-@onready var xval: Label = $"../DebugCanvas/VBoxContainer/xbox/xval"
 @onready var anime: AnimationPlayer = $AnimationPlayer
 
 var mouse_captured : bool = false
@@ -63,6 +62,7 @@ var crouching: bool = false
 @onready var collider: CollisionShape3D = $Collider
 
 func _ready() -> void:
+	capture_mouse()
 	check_input_mappings()
 	look_rotation.y = rotation.y
 	look_rotation.x = head.rotation.x
@@ -95,9 +95,8 @@ func _unhandled_input(event: InputEvent) -> void:
 			disable_freefly()
 
 
-func _process(delta: float) -> void:
-	xval.text = str(Engine.get_frames_per_second())
-
+func _process(_delta: float) -> void:
+	pass
 
 func check_jump():
 	if can_jump:
