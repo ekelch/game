@@ -38,6 +38,7 @@
 [ext_resource type="PackedScene" uid="uid://c2h2hkt3ao6cv" path="res://scenes/outdoors/common_tree_1.tscn" id="36_kjtvk"]
 [ext_resource type="PackedScene" uid="uid://bgsp3gngm1do4" path="res://scenes/outdoors/common_tree_2.tscn" id="37_xrs0c"]
 [ext_resource type="PackedScene" uid="uid://c4e531rvfs0do" path="res://scenes/building/portal_room.tscn" id="38_xljpf"]
+[ext_resource type="PackedScene" uid="uid://dnmeuynxk0niw" path="res://scenes/custom_tree.tscn" id="39_c6pm6"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_b1qrp"]
 panorama = ExtResource("2_c6pm6")
@@ -2005,6 +2006,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.328682, -0.93444026, -5.17
 [node name="CollisionShape3D" type="CollisionShape3D" parent="PortalRoom/Area3D" unique_id=1273594183]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.5689087, 0)
 shape = SubResource("BoxShape3D_b1qrp")
+
+[node name="Tree" parent="." unique_id=1977393487 instance=ExtResource("39_c6pm6")]
+transform = Transform3D(3.89, 0, 0, 0, 3.89, 0, 0, 0, 3.89, 6.9965, 0.12099978, -12.705792)
 
 [connection signal="body_entered" from="PortalRoom/Area3D" to="." method="_on_area_3d_body_entered"]
 

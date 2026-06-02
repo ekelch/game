@@ -5,6 +5,11 @@
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2500c"]
 bg_color = Color(0, 0, 0, 1)
 
+[sub_resource type="Gradient" id="Gradient_17o1r"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_cgoq2"]
+gradient = SubResource("Gradient_17o1r")
+
 [node name="LoadingScreen" type="CanvasLayer" unique_id=671601016]
 layer = 10
 script = ExtResource("1_5eiqs")
@@ -16,3 +21,16 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_2500c")
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="." unique_id=1896765755]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -1.0
+grow_horizontal = 2
+grow_vertical = 0
+max_value = 1.0
+step = 0.01
+value = 0.5
+texture_over = SubResource("GradientTexture2D_cgoq2")
